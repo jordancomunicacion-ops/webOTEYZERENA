@@ -29,20 +29,6 @@ export const projects: Project[] = [
         }
     },
     {
-        id: 2,
-        slug: 'montagu',
-        title: 'MONTAGU',
-        description: 'Reinvención de la carta y estandarización de procesos de cocina.',
-        fullDescription: 'En MONTAGU nos enfocamos en elevar la oferta gastronómica manteniendo la esencia del local. Implementamos nuevos escandallos, fichas técnicas y formamos al equipo para asegurar la consistencia en cada servicio.',
-        imageUrl: '/images/montagu.jpeg',
-        technicalDetails: {
-            client: 'Grupo Montagu',
-            year: '2023',
-            services: ['Diseño de Carta', 'Escandallos', 'Formación de Equipo'],
-            location: 'Madrid, España'
-        }
-    },
-    {
         id: 3,
         slug: 'la-gardabera',
         title: 'La Gardabera',
@@ -54,6 +40,20 @@ export const projects: Project[] = [
             year: '2023',
             services: ['Auditoría', 'Estrategia', 'Gestión de Compras'],
             location: 'Zaragoza, España'
+        }
+    },
+    {
+        id: 2,
+        slug: 'montagu',
+        title: 'MONTAGU',
+        description: 'Reinvención de la carta y estandarización de procesos de cocina.',
+        fullDescription: 'En MONTAGU nos enfocamos en elevar la oferta gastronómica manteniendo la esencia del local. Implementamos nuevos escandallos, fichas técnicas y formamos al equipo para asegurar la consistencia en cada servicio.',
+        imageUrl: '/images/montagu.jpeg',
+        technicalDetails: {
+            client: 'Grupo Montagu',
+            year: '2023',
+            services: ['Diseño de Carta', 'Escandallos', 'Formación de Equipo'],
+            location: 'Madrid, España'
         }
     },
     {
