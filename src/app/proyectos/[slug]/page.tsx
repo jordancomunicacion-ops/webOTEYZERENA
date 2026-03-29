@@ -1,7 +1,7 @@
-
 import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import styles from './ProjectPage.module.css';
 
 interface ProjectPageProps {
     params: Promise<{
@@ -24,8 +24,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     }
 
     return (
-        <main style={{ paddingBottom: '5rem' }}>
-            <nav style={{ padding: '1rem', background: '#f8f8f8' }}>
+        <main className={styles.main}>
+            <nav className={styles.nav}>
                 <div className="container">
                     <Link href="/#projects" style={{ textDecoration: 'none', color: '#666' }}>
                         ← Volver a Proyectos
@@ -33,46 +33,44 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </div>
             </nav>
 
-            <header style={{
-                height: '60vh',
-                background: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url(${project.imageUrl})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                display: 'flex',
-                alignItems: 'flex-end',
-                paddingBottom: '4rem',
-                color: 'white'
-            }}>
+            <header 
+                className={styles.header}
+                style={{
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url(${project.imageUrl})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            >
                 <div className="container">
-                    <h1 style={{ fontSize: '4rem', fontFamily: 'Playfair Display, serif' }}>{project.title}</h1>
+                    <h1 className={styles.title}>{project.title}</h1>
                 </div>
             </header>
 
-            <div className="container" style={{ marginTop: '4rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'minmax(250px, 1fr) 2fr', gap: '4rem' }}>
+            <div className={`container ${styles.contentWrapper}`}>
+                <div className={styles.grid}>
 
                     {/* Sidebar / Technical Details */}
                     <aside>
-                        <div style={{ background: '#f8f8f8', padding: '2rem', borderRadius: '8px' }}>
-                            <h3 style={{ borderBottom: '1px solid #ddd', paddingBottom: '1rem', marginBottom: '1.5rem', fontFamily: 'Playfair Display, serif' }}>Ficha Técnica</h3>
+                        <div className={styles.sidebarBox}>
+                            <h3 className={styles.sidebarTitle}>Ficha Técnica</h3>
 
-                            <div style={{ marginBottom: '1.5rem' }}>
-                                <strong style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', marginBottom: '0.5rem' }}>Cliente</strong>
+                            <div className={styles.detailGroup}>
+                                <strong className={styles.detailLabel}>Cliente</strong>
                                 {project.technicalDetails.client}
                             </div>
 
-                            <div style={{ marginBottom: '1.5rem' }}>
-                                <strong style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', marginBottom: '0.5rem' }}>Ubicación</strong>
+                            <div className={styles.detailGroup}>
+                                <strong className={styles.detailLabel}>Ubicación</strong>
                                 {project.technicalDetails.location}
                             </div>
 
-                            <div style={{ marginBottom: '1.5rem' }}>
-                                <strong style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', marginBottom: '0.5rem' }}>Año</strong>
+                            <div className={styles.detailGroup}>
+                                <strong className={styles.detailLabel}>Año</strong>
                                 {project.technicalDetails.year}
                             </div>
 
                             <div>
-                                <strong style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: '#888', marginBottom: '0.5rem' }}>Servicios</strong>
+                                <strong className={styles.detailLabel}>Servicios</strong>
                                 <ul style={{ listStyle: 'none', padding: 0 }}>
                                     {project.technicalDetails.services.map((service, index) => (
                                         <li key={index} style={{ marginBottom: '0.5rem' }}>• {service}</li>
@@ -84,12 +82,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
                     {/* Content */}
                     <article>
-                        <h2 style={{ fontSize: '2rem', marginBottom: '2rem', fontFamily: 'Playfair Display, serif' }}>Sobre el Proyecto</h2>
-                        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#444' }}>
+                        <h2 className={styles.articleTitle}>Sobre el Proyecto</h2>
+                        <p className={styles.articleText}>
                             {project.fullDescription}
                         </p>
                         {/* Placeholder for more content */}
-                        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#444', marginTop: '1.5rem' }}>
+                        <p className={`${styles.articleText} mb-2`}>
                             Aquí podríamos detallar más información específica, mostrar resultados obtenidos con gráficos, o incluir una galería de fotos extra del proyecto {project.title}.
                         </p>
                     </article>

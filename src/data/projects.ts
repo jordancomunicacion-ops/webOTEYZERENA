@@ -20,7 +20,7 @@ export const projects: Project[] = [
         title: 'SOTOdelPRIOR',
         description: 'Gestión integral y desarrollo de concepto para finca agroturística.',
         fullDescription: 'SOTOdelPRIOR representa la excelencia en la gestión de espacios rurales. Hemos trabajado en la definición del concepto gastronómico, optimización de operaciones y diseño de la experiencia de cliente, transformando una finca tradicional en un destino referente.',
-        imageUrl: '/images/soto-placeholder.jpg', // Placeholder
+        imageUrl: '/images/sotodelprior.jpg',
         technicalDetails: {
             client: 'SOTOdelPRIOR',
             year: '2024',

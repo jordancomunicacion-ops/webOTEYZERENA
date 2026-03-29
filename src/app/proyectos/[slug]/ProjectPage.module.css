@@ -1,0 +1,103 @@
+.main {
+    padding-bottom: 5rem;
+}
+
+.nav {
+    padding: 1rem;
+    background: #f8f8f8;
+}
+
+.header {
+    height: 60vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 4rem;
+    color: white;
+}
+
+.title {
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.contentWrapper {
+    margin-top: 4rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr) 2fr;
+    gap: 4rem;
+}
+
+.sidebarBox {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.sidebarTitle {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.detailGroup {
+    margin-bottom: 1.5rem;
+}
+
+.detailLabel {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+.articleTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.articleText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+@media (max-width: 992px) {
+    .grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 40vh;
+        padding-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 2.5rem !important;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contentWrapper {
+        margin-top: 2.5rem;
+    }
+
+    .main {
+        padding-bottom: 3rem;
+    }
+
+    .articleTitle {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+}
