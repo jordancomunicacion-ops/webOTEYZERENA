@@ -73,3 +73,25 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 1rem 0;
+    }
+
+    .brandName {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .imagotype {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        margin-right: 8px;
+    }
+}

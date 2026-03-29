@@ -8,8 +8,7 @@ export default function Contact({ inModal = false }: ContactProps) {
     return (
         <section
             id="contact"
-            className={styles.section}
-            style={inModal ? { padding: '1.5rem 0', backgroundColor: 'transparent' } : undefined}
+            className={`${styles.section} ${inModal ? styles.modalSection : ''}`}
         >
             <div className="container">
                 <div className={styles.wrapper}>
@@ -18,8 +17,8 @@ export default function Contact({ inModal = false }: ContactProps) {
                         Cuéntanos qué necesitas y te prepararemos un presupuesto a medida.
                     </p>
 
-                    <form className={styles.form} style={inModal ? { marginTop: '1rem', gap: '1rem' } : undefined}>
-                        <div style={inModal ? { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' } : undefined}>
+                    <form className={styles.form}>
+                        <div className={inModal ? styles.grid2Col : undefined}>
                             <div className={styles.group}>
                                 <label className={styles.label}>Nombre completo</label>
                                 <input type="text" className={styles.input} placeholder="Tu nombre" />
@@ -40,7 +39,7 @@ export default function Contact({ inModal = false }: ContactProps) {
                             )}
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: inModal ? '1rem' : '1.5rem' }}>
+                        <div className={styles.gridResponsive}>
                             <div className={styles.group}>
                                 <label className={styles.label}>Email</label>
                                 <input type="email" className={styles.input} placeholder="tu@email.com" />

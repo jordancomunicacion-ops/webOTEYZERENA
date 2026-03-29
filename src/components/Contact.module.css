@@ -15,6 +15,18 @@
     margin-top: 3rem;
 }
 
+.grid2Col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.gridResponsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
 .group {
     display: flex;
     flex-direction: column;
@@ -67,4 +79,32 @@
 
 .submitBtn:hover {
     transform: translateY(-2px);
+}
+.modalSection {
+    padding: 2rem;
+    background-color: transparent !important;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem;
+    }
+
+    .modalSection {
+        padding: 1.5rem;
+    }
+
+    .form {
+        margin-top: 1.5rem;
+    }
+
+    .grid2Col,
+    .gridResponsive {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .wrapper {
+        padding: 0;
+    }
 }

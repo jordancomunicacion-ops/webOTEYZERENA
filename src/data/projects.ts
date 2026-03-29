@@ -34,7 +34,7 @@ export const projects: Project[] = [
         title: 'MONTAGU',
         description: 'Reinvención de la carta y estandarización de procesos de cocina.',
         fullDescription: 'En MONTAGU nos enfocamos en elevar la oferta gastronómica manteniendo la esencia del local. Implementamos nuevos escandallos, fichas técnicas y formamos al equipo para asegurar la consistencia en cada servicio.',
-        imageUrl: '/images/montagu-placeholder.jpg', // Placeholder
+        imageUrl: '/images/montagu.jpeg',
         technicalDetails: {
             client: 'Grupo Montagu',
             year: '2023',
