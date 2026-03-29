@@ -1,0 +1,70 @@
+.section {
+    padding: 8rem 0;
+    background-color: var(--primary);
+    color: white;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.input,
+.textarea,
+.select {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.select option {
+    color: black;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: white;
+}
+
+.submitBtn {
+    background: white;
+    color: var(--primary);
+    padding: 1.2rem;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.submitBtn:hover {
+    transform: translateY(-2px);
+}

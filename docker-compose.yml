@@ -1,0 +1,21 @@
+name: "oteyzerena"
+services:
+  web:
+    build: .
+    container_name: web-oteyzerena
+    restart: unless-stopped
+    networks:
+      - proxy-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.oteyzerena.rule=Host(`oteyzerena.com`) || Host(`www.oteyzerena.com`)"
+      - "traefik.http.routers.oteyzerena.entrypoints=websecure"
+      - "traefik.http.routers.oteyzerena.tls=true"
+      - "traefik.http.routers.oteyzerena.tls.certresolver=le"
+      - "traefik.http.services.oteyzerena.loadbalancer.server.port=3000"
+      - "traefik.http.routers.oteyzerena-http.rule=Host(`oteyzerena.com`) || Host(`www.oteyzerena.com`)"
+      - "traefik.http.routers.oteyzerena-http.entrypoints=web"
+      - "traefik.http.routers.oteyzerena-http.middlewares=redirect-to-https"
+networks:
+  proxy-net:
+    external: true

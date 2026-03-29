@@ -1,0 +1,98 @@
+.card {
+    position: relative;
+    height: 400px;
+    /* Adjust height as needed */
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.imageContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+/* 
+   Overlay slides up from the bottom.
+   User request: "sube desde la base... hasta un 330% de ella"
+   Interpreting as starting from just title visible (or hidden) to revealing content.
+   Let's make it an overlay that sits at the bottom and expands or moves up.
+*/
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Occupy full height but transparency helps */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    color: white;
+    transform: translateY(30%);
+    /* Initially pushed down to show just title mostly */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 1;
+}
+
+/* 
+   Wait, specific request: "sube desde la base de la foto hasta un 330% de ella"
+   330% is likely a typo for 30% or 33%. 
+   Or maybe they mean the footer moves up 33% of the image height?
+   Let's try a standard elegant slide-up:
+   - Default: Title visible at bottom. Description hidden below fold or effectively hidden.
+   - Hover: Content slides up to reveal description. Background darkens.
+*/
+
+.card:hover .overlay {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(107, 112, 92, 0.9) 0%, rgba(107, 112, 92, 0.6) 100%);
+    /* Using primary green with opacity */
+}
+
+.content {
+    transform: translateY(20px);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.card:hover .content {
+    transform: translateY(0);
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0;
+    /* Hidden by default */
+    transform: translateY(10px);
+    transition: all 0.3s ease 0.1s;
+    /* Slight delay */
+    max-width: 90%;
+}
+
+.card:hover .description {
+    opacity: 1;
+    transform: translateY(0);
+}

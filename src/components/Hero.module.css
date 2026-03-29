@@ -1,0 +1,58 @@
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.content {
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.title {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btnPrimary {
+    background: var(--accent);
+    color: var(--foreground);
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border: none;
+}

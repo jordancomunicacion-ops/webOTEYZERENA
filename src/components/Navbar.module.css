@@ -1,0 +1,75 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    background: var(--background);
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.imagotype {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1.5px solid var(--foreground);
+    border-radius: 50%;
+    font-family: var(--font-playfair);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.brandName {
+    font-family: var(--font-playfair);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--foreground);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo:hover .imagotype {
+    background: var(--foreground);
+    color: var(--background);
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+}
+
+.link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--foreground);
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.link:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.cta {
+    background: var(--foreground);
+    color: var(--background);
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
