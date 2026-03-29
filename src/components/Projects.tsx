@@ -1,4 +1,4 @@
-import styles from './Services.module.css'; // Reuse basic grid styles
+import styles from './Projects.module.css';
 import { projects } from '@/data/projects';
 import ProjectCard from './ProjectCard';
 
