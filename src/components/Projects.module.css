@@ -1,17 +1,37 @@
 .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 2rem;
+    padding: 1rem 0 3rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    cursor: grab;
 }
 
-@media (max-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.grid:active {
+    cursor: grabbing;
+}
+
+/* Ensure project cards have a consistent width and snap */
+.grid > * {
+    flex: 0 0 350px;
+    scroll-snap-align: start;
 }
 
 @media (max-width: 768px) {
     .grid {
-        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .grid > * {
+        flex: 0 0 calc(100% - 3rem);
     }
 }
