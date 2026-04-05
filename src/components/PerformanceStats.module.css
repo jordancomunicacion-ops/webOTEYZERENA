@@ -1,0 +1,69 @@
+.container {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.title {
+    font-family: var(--font-playfair), serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    border-left: 4px solid var(--primary, #1a1a1a);
+    padding-left: 1rem;
+}
+
+.metricsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.metricItem {
+    width: 100%;
+}
+
+.metricHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.label {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #444;
+    font-weight: 500;
+}
+
+.value {
+    font-family: var(--font-playfair), serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.barContainer {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    background: linear-gradient(90deg, #1a1a1a 0%, #444 100%);
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.1, 0, 0.1, 1);
+}
+
+/* Premium variation for high values */
+.barHigh {
+    background: linear-gradient(90deg, #b8860b 0%, #daa520 100%); /* Gold hint */
+}

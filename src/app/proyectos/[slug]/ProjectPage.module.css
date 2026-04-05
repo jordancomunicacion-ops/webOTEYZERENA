@@ -47,6 +47,18 @@
     margin-bottom: 1.5rem;
 }
 
+.websiteLink {
+    display: block;
+    font-size: 0.9rem;
+    color: #0070f3;
+    text-decoration: none;
+    margin-top: 0.25rem;
+}
+
+.websiteLink:hover {
+    text-decoration: underline;
+}
+
 .detailLabel {
     display: block;
     font-size: 0.85rem;

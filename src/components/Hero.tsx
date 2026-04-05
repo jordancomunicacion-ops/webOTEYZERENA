@@ -12,7 +12,7 @@ export default function Hero() {
     return (
         <section className={styles.hero}>
             <div className={styles.content}>
-                <h1 className={styles.title}>De la Tierra a la Excelencia Gastronómica</h1>
+                <h1 className={styles.title}>de la tierra</h1>
                 <p className={styles.subtitle}>
                     Optimizamos la gestión, el concepto y la rentabilidad de tu negocio hostelero con una visión enraizada en el producto y la innovación.
                 </p>

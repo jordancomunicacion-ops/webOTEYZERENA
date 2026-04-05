@@ -2,6 +2,9 @@ import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import styles from './ProjectPage.module.css';
+import PerformanceStats from '@/components/PerformanceStats';
+import AwardsList from '@/components/AwardsList';
+import ProjectResults from '@/components/ProjectResults';
 
 interface ProjectPageProps {
     params: Promise<{
@@ -57,6 +60,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                             <div className={styles.detailGroup}>
                                 <strong className={styles.detailLabel}>Cliente</strong>
                                 {project.technicalDetails.client}
+                                {project.technicalDetails.website && (
+                                    <a 
+                                        href={`https://${project.technicalDetails.website}`} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className={styles.websiteLink}
+                                    >
+                                        {project.technicalDetails.website}
+                                    </a>
+                                )}
                             </div>
 
                             <div className={styles.detailGroup}>
@@ -82,14 +95,24 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
                     {/* Content */}
                     <article>
-                        <h2 className={styles.articleTitle}>Sobre el Proyecto</h2>
                         <p className={styles.articleText}>
                             {project.fullDescription}
                         </p>
-                        {/* Placeholder for more content */}
-                        <p className={`${styles.articleText} mb-2`}>
-                            Aquí podríamos detallar más información específica, mostrar resultados obtenidos con gráficos, o incluir una galería de fotos extra del proyecto {project.title}.
-                        </p>
+                        
+                        {project.detailedMilestones ? (
+                            <ProjectResults 
+                                metrics={project.performanceMetrics} 
+                                milestones={project.detailedMilestones} 
+                            />
+                        ) : (
+                            project.performanceMetrics && (
+                                <PerformanceStats metrics={project.performanceMetrics} />
+                            )
+                        )}
+
+                        {project.awards && (
+                            <AwardsList awards={project.awards} />
+                        )}
                     </article>
                 </div>
             </div>

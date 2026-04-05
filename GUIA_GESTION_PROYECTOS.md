@@ -28,7 +28,7 @@ export const projects: Project[] = [
     {
         id: 1,
         slug: 'sotodelprior',
-        title: 'SOTOdelPRIOR',
+        title: 'SOTO del PRIOR',
         description: 'Gestión integral...',
         // ... más datos ...
     },
@@ -50,7 +50,7 @@ Copia el siguiente bloque de código y pégalo **antes** del cierre del corchete
         imageUrl: '/images/tu-foto-nueva.jpg', // IMPORTANTE: El nombre exacto del archivo que guardaste en public/images
         technicalDetails: {
             client: 'Nombre del Cliente',
-            year: '2024',
+            year: '2022',
             services: ['Servicio 1', 'Servicio 2', 'Servicio 3'], // Puedes poner tantos como quieras entre comillas
             location: 'Ciudad, País'
         }

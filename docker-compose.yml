@@ -1,21 +1,29 @@
-name: "oteyzerena"
-services:
-  web:
-    build: .
-    container_name: web-oteyzerena
-    restart: unless-stopped
-    networks:
-      - proxy-net
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.oteyzerena.rule=Host(`oteyzerena.com`) || Host(`www.oteyzerena.com`)"
-      - "traefik.http.routers.oteyzerena.entrypoints=websecure"
-      - "traefik.http.routers.oteyzerena.tls=true"
-      - "traefik.http.routers.oteyzerena.tls.certresolver=le"
-      - "traefik.http.services.oteyzerena.loadbalancer.server.port=3000"
-      - "traefik.http.routers.oteyzerena-http.rule=Host(`oteyzerena.com`) || Host(`www.oteyzerena.com`)"
-      - "traefik.http.routers.oteyzerena-http.entrypoints=web"
-      - "traefik.http.routers.oteyzerena-http.middlewares=redirect-to-https"
+name: "sotooteyzerena"
+
 networks:
   proxy-net:
     external: true
+
+services:
+  sotooteyzerena-web:
+    build: .
+    container_name: sotooteyzerena-web
+    restart: unless-stopped
+    networks:
+      - proxy-net
+    expose:
+      - "3000"
+    labels:
+      - "traefik.enable=true"
+      # Router HTTPS
+      - "traefik.http.routers.sotooteyzerena-web.rule=Host(`oteyzerena.com`) || Host(`www.oteyzerena.com`)"
+      - "traefik.http.routers.sotooteyzerena-web.entrypoints=websecure"
+      - "traefik.http.routers.sotooteyzerena-web.tls=true"
+      - "traefik.http.routers.sotooteyzerena-web.tls.certresolver=le"
+      # Servicio
+      - "traefik.http.services.sotooteyzerena-web.loadbalancer.server.port=3000"
+      # Redirect HTTP -> HTTPS
+      - "traefik.http.routers.sotooteyzerena-web-http.rule=Host(`oteyzerena.com`) || Host(`www.oteyzerena.com`)"
+      - "traefik.http.routers.sotooteyzerena-web-http.entrypoints=web"
+      - "traefik.http.routers.sotooteyzerena-web-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"

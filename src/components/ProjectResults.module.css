@@ -1,0 +1,95 @@
+.container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.highlightCard {
+    background: #fdfdfd;
+    color: #1a1a1a;
+    padding: 2.5rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.highlightContent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.trendIcon {
+    color: #b8860b; /* Sutil dorado para éxito tecnico */
+}
+
+.highlightValue {
+    font-family: var(--font-playfair), serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.highlightLabel {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    color: #666;
+}
+
+.milestonesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+@media (min-width: 992px) {
+    .milestonesGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.milestoneCard {
+    background: white;
+    padding: 2rem;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.iconWrapper {
+    width: 44px;
+    height: 44px;
+    background: #fafafa;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b8860b; /* Iconos en dorado sutil */
+}
+
+.milestoneTitle {
+    font-family: var(--font-playfair), serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.milestoneDesc {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+}
