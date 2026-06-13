@@ -2,9 +2,10 @@ import styles from './Contact.module.css';
 
 interface ContactProps {
     inModal?: boolean;
+    defaultService?: string;
 }
 
-export default function Contact({ inModal = false }: ContactProps) {
+export default function Contact({ inModal = false, defaultService = "" }: ContactProps) {
     return (
         <section
             id="contact"
@@ -27,13 +28,14 @@ export default function Contact({ inModal = false }: ContactProps) {
                             {inModal && (
                                 <div className={styles.group}>
                                     <label className={styles.label}>Tipo de Servicio</label>
-                                    <select className={styles.select}>
+                                    <select className={styles.select} defaultValue={defaultService}>
                                         <option value="">Elija una opción</option>
                                         <option value="gestion_gastronomica">Gestión Gastronómica</option>
                                         <option value="operaciones">Operaciones</option>
                                         <option value="auditoria_analisis">Auditoría y Análisis</option>
                                         <option value="formacion_equipo">Formación y Equipo</option>
                                         <option value="digitalizacion">Digitalización</option>
+                                        <option value="demo_apps">Solicitar Demo de Apps</option>
                                     </select>
                                 </div>
                             )}
@@ -53,7 +55,7 @@ export default function Contact({ inModal = false }: ContactProps) {
                         {!inModal && (
                             <div className={styles.group}>
                                 <label className={styles.label}>Tipo de Servicio</label>
-                                <select className={styles.select}>
+                                <select className={styles.select} defaultValue={defaultService}>
                                     <option value="">Elija una opción</option>
                                     <option value="gestion_gastronomica">Gestión Gastronómica</option>
                                     <option value="operaciones">Operaciones</option>

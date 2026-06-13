@@ -74,7 +74,7 @@
     letter-spacing: 1px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .nav {
         padding: 1rem 0;
     }
@@ -94,4 +94,92 @@
         font-size: 1rem;
         margin-right: 8px;
     }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 24px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1000;
+    }
+
+    .hamburger span {
+        width: 24px;
+        height: 2px;
+        background: var(--foreground);
+        transition: all 0.3s linear;
+        position: relative;
+        transform-origin: 1px;
+    }
+
+    .hamburgerActive span:first-child {
+        transform: rotate(45deg);
+    }
+
+    .hamburgerActive span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburgerActive span:last-child {
+        transform: rotate(-45deg);
+    }
+
+    .mobileMenu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--background);
+        z-index: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s cubic-bezier(0.82, 0.01, 0.77, 0.41);
+    }
+
+    .mobileMenuOpen {
+        right: 0;
+    }
+
+    .mobileLinks {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    .mobileLink {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--foreground);
+        text-transform: lowercase;
+        letter-spacing: 1px;
+    }
+
+    .mobileCta {
+        margin-top: 1rem;
+        background: var(--foreground);
+        color: var(--background);
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
+        font-family: var(--font-inter);
+        text-transform: uppercase;
+    }
 }
+
+@media (min-width: 969px) {
+    .hamburger {
+        display: none;
+    }
+    
+    .mobileMenu {
+        display: none;
+    }
+}
