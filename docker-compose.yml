@@ -9,12 +9,24 @@ services:
     build: .
     container_name: sotooteyzerena-web
     restart: unless-stopped
+    init: true
     networks:
       - proxy-net
     expose:
       - "3000"
+    healthcheck:
+      test: ["CMD", "node", "-e", "const h=require('os').hostname();fetch('http://'+h+':3000/').then(r=>process.exit(r.status<500?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
     labels:
+      - "autoheal=true"
       - "traefik.enable=true"
+      - "traefik.http.routers.sotooteyzerena-web.middlewares=oteyzerena-wwwredir"
+      - "traefik.http.middlewares.oteyzerena-wwwredir.redirectregex.regex=^https?://www\\.(.+)"
+      - "traefik.http.middlewares.oteyzerena-wwwredir.redirectregex.replacement=https://$${1}"
+      - "traefik.http.middlewares.oteyzerena-wwwredir.redirectregex.permanent=true"
       # Router HTTPS
       - "traefik.http.routers.sotooteyzerena-web.rule=Host(`oteyzerena.com`) || Host(`www.oteyzerena.com`)"
       - "traefik.http.routers.sotooteyzerena-web.entrypoints=websecure"
