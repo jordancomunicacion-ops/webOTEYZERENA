@@ -26,9 +26,9 @@ const services = [
 
 const apps = [
     {
-        name: "Contabilidad",
-        description: "Gestiona ingresos, gastos y rentabilidad desde un único panel, con informes claros para decidir mejor.",
-        features: ["Cuadre de caja diario", "Control de costes y márgenes", "Informes y previsiones"]
+        name: "Reservas",
+        description: "Recibe y organiza reservas online 24/7, optimiza la sala y reduce los no-shows.",
+        features: ["Reservas online 24/7", "Gestión de sala y turnos", "Recordatorios automáticos"]
     },
     {
         name: "Obrador",
@@ -41,9 +41,9 @@ const apps = [
         features: ["Ficha y historial de cliente", "Fidelización y promociones", "Segmentación y campañas"]
     },
     {
-        name: "Reservas",
-        description: "Recibe y organiza reservas online 24/7, optimiza la sala y reduce los no-shows.",
-        features: ["Reservas online 24/7", "Gestión de sala y turnos", "Recordatorios automáticos"]
+        name: "Contabilidad",
+        description: "Gestiona ingresos, gastos y rentabilidad desde un único panel, con informes claros para decidir mejor.",
+        features: ["Cuadre de caja diario", "Control de costes y márgenes", "Informes y previsiones"]
     }
 ];
 
