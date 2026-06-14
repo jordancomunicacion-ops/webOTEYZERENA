@@ -3,16 +3,41 @@
     background-color: #FAFAFA;
 }
 
-.grid {
+/* Dos columnas: izquierda servicios, derecha apps */
+.columns {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 900px;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.columnTitle {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    flex: 1;
+    grid-auto-rows: 1fr;
+}
+
 .card {
-    padding: 2.5rem;
+    padding: 1.75rem;
     background: white;
     border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -24,7 +49,7 @@
 }
 
 .cardTitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     font-family: 'Playfair Display', serif;
     color: var(--primary);
@@ -32,7 +57,7 @@
 
 .cardList {
     list-style: none;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: #555;
 }
 
@@ -49,16 +74,78 @@
     left: 0;
 }
 
-@media (max-width: 768px) {
-    .section {
-        padding: 4rem 0;
-    }
+/* Tarjetas de apps */
+.appCard .cardTitle {
+    margin-bottom: 0.75rem;
+}
 
-    .grid {
+.description {
+    font-size: 0.88rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.featureList {
+    list-style: none;
+    font-size: 0.84rem;
+    color: #555;
+}
+
+.featureList li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.4rem;
+    position: relative;
+}
+
+.featureList li::before {
+    content: "✓";
+    color: var(--secondary);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+}
+
+/* CTA centrado abajo */
+.ctaWrap {
+    text-align: center;
+    margin-top: 3.5rem;
+}
+
+.ctaBtn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.ctaBtn:hover {
+    background: var(--accent);
+    color: var(--foreground);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .columns {
         grid-template-columns: 1fr;
+        gap: 3rem;
     }
+}
 
+@media (max-width: 768px) {
     .card {
         padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
     }
 }

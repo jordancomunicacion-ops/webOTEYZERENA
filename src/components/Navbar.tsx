@@ -22,7 +22,7 @@ export default function Navbar() {
                 <div className={styles.links}>
                     <Link href="#methodology" className={styles.link}>Metodología</Link>
                     <Link href="#services" className={styles.link}>Servicios</Link>
-                    <Link href="#apps" className={styles.link}>Apps</Link>
+                    <Link href="#services" className={styles.link}>Apps</Link>
                     <Link href="#projects" className={styles.link}>Proyectos</Link>
                 </div>
 
@@ -43,7 +43,7 @@ export default function Navbar() {
                 <div className={styles.mobileLinks}>
                     <Link href="#methodology" className={styles.mobileLink} onClick={closeMenu}>Metodología</Link>
                     <Link href="#services" className={styles.mobileLink} onClick={closeMenu}>Servicios</Link>
-                    <Link href="#apps" className={styles.mobileLink} onClick={closeMenu}>Apps</Link>
+                    <Link href="#services" className={styles.mobileLink} onClick={closeMenu}>Apps</Link>
                     <Link href="#projects" className={styles.mobileLink} onClick={closeMenu}>Proyectos</Link>
                     <Link href="#contact" className={`${styles.mobileLink} ${styles.mobileCta}`} onClick={closeMenu}>Contacto</Link>
                 </div>

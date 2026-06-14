@@ -66,6 +66,11 @@ button {
   padding: 4rem 0;
 }
 
+/* Deja hueco para el navbar fijo al saltar a un ancla */
+section[id] {
+  scroll-margin-top: 7rem;
+}
+
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
