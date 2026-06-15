@@ -62,7 +62,7 @@ export default function RootLayout({
           {`
             (function() {
               var siteId = "e4df4f42-2617-41e9-ad38-8a61fd9388e0";
-              var endpoint = "https://crm.sotodelprior.com/api/analytics/track";
+              var endpoint = "https://crm.oteyzerena.com/api/analytics/track";
 
               function track(url) {
                 if(!url) url = window.location.pathname;

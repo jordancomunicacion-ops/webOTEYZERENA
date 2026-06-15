@@ -19,9 +19,16 @@ export default function Footer() {
                             <a href="tel:+34680657132" className={styles.contactLink}>+34 680 657 132</a>
                         </div>
                     </div>
+                    <div className={styles.column}>
+                        <h4 className={styles.title}>Legal</h4>
+                        <div className={styles.contactGroup}>
+                            <Link href="/privacidad" className={styles.contactLink}>Política de Privacidad</Link>
+                            <Link href="/terminos" className={styles.contactLink}>Términos y Condiciones</Link>
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.bottom}>
-                    © {new Date().getFullYear()} OTEYZERENA Asesoría Gastronómica. Todos los derechos reservados.
+                    © {new Date().getFullYear()} OTEYZERENA — Jordazola SL. Todos los derechos reservados.
                 </div>
             </div>
         </footer>
