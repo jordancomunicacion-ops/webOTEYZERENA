@@ -36,24 +36,27 @@ export default function PrivacidadPage() {
               <p><strong>Responsable del tratamiento:</strong> Jordazola SL</p>
               <p><strong>Marcas comerciales:</strong> OTEYZERENA y SOTO del PRIOR</p>
               <p><strong>Domicilio:</strong> Calle San Nicolás 72, 31001 Pamplona, Navarra, España</p>
-              <p><strong>Correo de contacto:</strong> <a href="mailto:gerencia@sotodelprior.com">gerencia@sotodelprior.com</a></p>
+              <p><strong>Correo de contacto:</strong> <a href="mailto:contacto@oteyzerena.com">contacto@oteyzerena.com</a></p>
             </div>
 
             <p>
               En Jordazola SL (en adelante, «nosotros») respetamos tu privacidad y nos
-              comprometemos a proteger los datos personales que tratamos. Esta política explica
-              qué datos recogemos, con qué finalidad, en qué base jurídica nos apoyamos y qué
-              derechos puedes ejercer, de conformidad con el Reglamento (UE) 2016/679 (RGPD) y la
-              Ley Orgánica 3/2018 (LOPDGDD).
+              comprometemos a proteger los datos personales que tratamos. Esta Política de
+              Privacidad se aplica a nuestro sitio web y a nuestra aplicación{" "}
+              <strong>Integración CRM</strong>, y explica qué datos recogemos, con qué finalidad, en
+              qué base jurídica nos apoyamos y qué derechos puedes ejercer, de conformidad con el
+              Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).
             </p>
 
             <h2>1. Quiénes somos y qué ofrecemos</h2>
             <p>
               Jordazola SL opera la marca OTEYZERENA (asesoría gastronómica y consultoría para
-              hostelería y sector primario) y ofrece, además, un CRM en la nube
+              hostelería y sector primario) y ofrece, además, la aplicación{" "}
+              <strong>Integración CRM</strong>, un CRM en la nube
               (<a href="https://crm.oteyzerena.com">crm.oteyzerena.com</a>) que permite a cada empresa
-              cliente gestionar sus propias páginas y cuentas de redes sociales desde un único
-              panel. Actuamos como proveedor de tecnología para nuestros clientes.
+              cliente gestionar sus propias páginas y cuentas de redes sociales (Facebook, Instagram,
+              TikTok, Google y LinkedIn) desde un único panel. Actuamos como proveedor de tecnología
+              para nuestros clientes.
             </p>
 
             <h2>2. Datos que tratamos</h2>
@@ -117,7 +120,7 @@ export default function PrivacidadPage() {
             <p>
               Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición,
               limitación y portabilidad escribiéndonos a{" "}
-              <a href="mailto:gerencia@sotodelprior.com">gerencia@sotodelprior.com</a>. También
+              <a href="mailto:contacto@oteyzerena.com">contacto@oteyzerena.com</a>. También
               tienes derecho a reclamar ante la Agencia Española de Protección de Datos
               (www.aepd.es).
             </p>
@@ -126,7 +129,7 @@ export default function PrivacidadPage() {
             <p>
               Para solicitar la eliminación de los datos vinculados a las cuentas conectadas en
               nuestro CRM, escríbenos a{" "}
-              <a href="mailto:gerencia@sotodelprior.com">gerencia@sotodelprior.com</a> o utiliza el
+              <a href="mailto:contacto@oteyzerena.com">contacto@oteyzerena.com</a> o utiliza el
               endpoint de eliminación de datos habilitado en{" "}
               <a href="https://crm.oteyzerena.com/api/data-deletion">crm.oteyzerena.com/api/data-deletion</a>.
             </p>

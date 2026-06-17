@@ -15,7 +15,7 @@ export default function Footer() {
                     <div className={styles.column}>
                         <h4 className={styles.title}>Contacto</h4>
                         <div className={styles.contactGroup}>
-                            <a href="mailto:info@sotodelprior.com" className={styles.contactLink}>info@sotodelprior.com</a>
+                            <a href="mailto:contacto@oteyzerena.com" className={styles.contactLink}>contacto@oteyzerena.com</a>
                             <a href="tel:+34680657132" className={styles.contactLink}>+34 680 657 132</a>
                         </div>
                     </div>
