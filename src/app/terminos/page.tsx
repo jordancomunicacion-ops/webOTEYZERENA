@@ -36,23 +36,24 @@ export default function TerminosPage() {
               <p><strong>Titular:</strong> Jordazola SL</p>
               <p><strong>Marcas comerciales:</strong> OTEYZERENA y SOTO del PRIOR</p>
               <p><strong>Domicilio:</strong> Calle San Nicolás 72, 31001 Pamplona, Navarra, España</p>
-              <p><strong>Correo de contacto:</strong> <a href="mailto:gerencia@sotodelprior.com">gerencia@sotodelprior.com</a></p>
+              <p><strong>Correo de contacto:</strong> <a href="mailto:contacto@oteyzerena.com">contacto@oteyzerena.com</a></p>
             </div>
 
             <p>
               Estos términos y condiciones (en adelante, los «Términos») regulan el acceso y uso
-              del sitio web de OTEYZERENA y de los servicios prestados por Jordazola SL, incluido su
-              CRM en la nube. Al utilizar el sitio o contratar los servicios, aceptas estos
-              Términos.
+              del sitio web de OTEYZERENA y de los servicios prestados por Jordazola SL, incluida su
+              aplicación <strong>Integración CRM</strong>. Al utilizar el sitio o la aplicación,
+              aceptas estos Términos.
             </p>
 
             <h2>1. Objeto</h2>
             <p>
-              Jordazola SL ofrece servicios de asesoría gastronómica y consultoría, así como un CRM
-              (<a href="https://crm.oteyzerena.com">crm.oteyzerena.com</a>) que permite a las empresas
-              cliente gestionar sus propias cuentas de redes sociales (incluidas páginas de Facebook
-              e Instagram), publicar y programar contenido, consultar métricas y atender comentarios
-              y mensajes desde un único panel.
+              Jordazola SL ofrece servicios de asesoría gastronómica y consultoría, así como la
+              aplicación <strong>Integración CRM</strong>
+              (<a href="https://crm.oteyzerena.com">crm.oteyzerena.com</a>), que permite a las empresas
+              cliente gestionar sus propias cuentas de redes sociales (Facebook, Instagram, TikTok,
+              Google y LinkedIn), publicar y programar contenido, consultar métricas y atender
+              comentarios y mensajes desde un único panel.
             </p>
 
             <h2>2. Uso del servicio</h2>
@@ -107,7 +108,7 @@ export default function TerminosPage() {
             <h2>9. Contacto</h2>
             <p>
               Para cualquier cuestión sobre estos Términos, escríbenos a{" "}
-              <a href="mailto:gerencia@sotodelprior.com">gerencia@sotodelprior.com</a>.
+              <a href="mailto:contacto@oteyzerena.com">contacto@oteyzerena.com</a>.
             </p>
           </article>
         </div>
