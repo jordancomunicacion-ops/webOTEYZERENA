@@ -61,35 +61,81 @@ export default function RootLayout({
         <Script id="custom-tracking" strategy="afterInteractive">
           {`
             (function() {
-              var siteId = "e4df4f42-2617-41e9-ad38-8a61fd9388e0";
+              var siteId = "f428747f-3833-4579-9c58-65f1ea86b6c4";
               var endpoint = "https://crm.oteyzerena.com/api/analytics/track";
+
+              // Helper to get/create ID (Site-specific storage keys)
+              function getId(key, storage) {
+                  if(!storage) return "";
+                  var fullKey = key + "_" + siteId.substring(0, 8);
+                  var id = storage.getItem(fullKey);
+                  if(!id) {
+                      id = Math.random().toString(36).substring(2) + Date.now().toString(36);
+                      storage.setItem(fullKey, id);
+                  }
+                  return id;
+              }
 
               function track(url) {
                 if(!url) url = window.location.pathname;
+
+                var vid = getId('ana_visitor_id', localStorage);
+                var sid = getId('ana_session_id', sessionStorage);
+
                 var data = {
                     websiteId: siteId,
                     url: url,
                     referrer: document.referrer,
-                    userAgent: navigator.userAgent
+                    userAgent: navigator.userAgent,
+                    visitorId: vid,
+                    sessionId: sid
                 };
                 fetch(endpoint, {
                     method: "POST",
+                    mode: "cors",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(data)
-                }).catch(console.error);
+                }).catch(function(e) { console.warn("Analytics Error:", e); });
               }
-
               track();
 
               var pushState = history.pushState;
               history.pushState = function() {
-                pushState.apply(history, arguments);
-                track(window.location.pathname);
+                  pushState.apply(history, arguments);
+                  setTimeout(function() { track(window.location.pathname); }, 100);
+              };
+              window.addEventListener('popstate', function() { track(window.location.pathname); });
+
+              // Event Tracker
+              window.trackEvent = function(t, d) {
+                  var vid = getId('ana_visitor_id', localStorage);
+                  var sid = getId('ana_session_id', sessionStorage);
+
+                  var data = {
+                      websiteId: siteId,
+                      url: window.location.pathname,
+                      type: 'EVENT',
+                      eventType: t,
+                      eventData: d || {},
+                      userAgent: navigator.userAgent,
+                      visitorId: vid,
+                      sessionId: sid
+                  };
+                  if (navigator.sendBeacon) {
+                      navigator.sendBeacon(endpoint, new Blob([JSON.stringify(data)], {type:'application/json'}));
+                  } else {
+                      fetch(endpoint, { method: "POST", mode: "cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) }).catch(console.error);
+                  }
               };
 
-              window.addEventListener('popstate', function() {
-                  track(window.location.pathname);
-              });
+              document.addEventListener('click', function(e) {
+                  var t = e.target.closest('a, button');
+                  if (t) {
+                      var text = (t.innerText || t.textContent || '').trim().substring(0,50);
+                      if(!text && !t.id && !t.className) return;
+                      window.trackEvent('CLICK', { element: t.tagName, text: text, id: t.id, class: t.className, href: t.href });
+                  }
+              }, true);
             })();
           `}
         </Script>
