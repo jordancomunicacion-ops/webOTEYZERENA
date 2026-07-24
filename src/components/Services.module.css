@@ -85,26 +85,6 @@
     margin-bottom: 1rem;
 }
 
-.featureList {
-    list-style: none;
-    font-size: 0.84rem;
-    color: #555;
-}
-
-.featureList li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.4rem;
-    position: relative;
-}
-
-.featureList li::before {
-    content: "✓";
-    color: var(--secondary);
-    font-weight: 700;
-    position: absolute;
-    left: 0;
-}
-
 /* CTA centrado abajo */
 .ctaWrap {
     text-align: center;

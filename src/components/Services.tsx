@@ -27,23 +27,19 @@ const services = [
 const apps = [
     {
         name: "Reservas",
-        description: "Recibe y organiza reservas online 24/7, optimiza la sala y reduce los no-shows.",
-        features: ["Reservas online 24/7", "Gestión de sala y turnos", "Recordatorios automáticos"]
+        description: "Herramienta propia con la que gestionas las reservas de tu negocio desde un único panel: recibe y organiza reservas online 24/7, optimiza la sala y los turnos, y reduce los no-shows con recordatorios automáticos."
     },
     {
         name: "Obrador",
-        description: "Estandariza recetas, escandallos y producción. Optimiza compras y controla las mermas.",
-        features: ["Escandallos y fichas técnicas", "Planificación de producción", "Control de stock y mermas"]
+        description: "Herramienta propia con la que controlas la producción de tu negocio desde un único panel: estandariza recetas y escandallos, planifica la producción, y optimiza las compras controlando el stock y las mermas."
     },
     {
-        name: "CRM",
-        description: "Conoce a tus clientes, fideliza y personaliza la experiencia para que vuelvan una y otra vez.",
-        features: ["Ficha y historial de cliente", "Fidelización y promociones", "Segmentación y campañas"]
+        name: "CRM OTEYZERENA",
+        description: "Herramienta propia con la que cada cliente conecta sus cuentas de Google y de redes sociales (Google Business Profile y Google Analytics, Facebook, Instagram) y las gestiona desde un único panel: métricas, ficha de empresa, publicaciones y mensajes."
     },
     {
         name: "Contabilidad",
-        description: "Gestiona ingresos, gastos y rentabilidad desde un único panel, con informes claros para decidir mejor.",
-        features: ["Cuadre de caja diario", "Control de costes y márgenes", "Informes y previsiones"]
+        description: "Herramienta propia con la que llevas las cuentas de tu negocio desde un único panel: gestiona ingresos, gastos y rentabilidad, cuadra la caja diaria y controla costes y márgenes con informes claros para decidir mejor."
     }
 ];
 
@@ -87,11 +83,6 @@ export default function Services() {
                                 <div key={idx} className={`${styles.card} ${styles.appCard}`}>
                                     <h4 className={styles.cardTitle}>{app.name}</h4>
                                     <p className={styles.description}>{app.description}</p>
-                                    <ul className={styles.featureList}>
-                                        {app.features.map((feature, i) => (
-                                            <li key={i}>{feature}</li>
-                                        ))}
-                                    </ul>
                                 </div>
                             ))}
                         </div>
