@@ -20,10 +20,11 @@ export default function Navbar() {
 
                 {/* Desktop Links */}
                 <div className={styles.links}>
-                    <Link href="#methodology" className={styles.link}>Metodología</Link>
-                    <Link href="#services" className={styles.link}>Servicios</Link>
-                    <Link href="#services" className={styles.link}>Apps</Link>
-                    <Link href="#projects" className={styles.link}>Proyectos</Link>
+                    <Link href="/manifiesto" className={styles.link}>Manifiesto</Link>
+                    <Link href="/#methodology" className={styles.link}>Metodología</Link>
+                    <Link href="/#services" className={styles.link}>Servicios</Link>
+                    <Link href="/#services" className={styles.link}>Apps</Link>
+                    <Link href="/#projects" className={styles.link}>Proyectos</Link>
                 </div>
 
                 {/* Hamburger Button */}
@@ -41,11 +42,12 @@ export default function Navbar() {
             {/* Mobile Menu Overlay */}
             <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
                 <div className={styles.mobileLinks}>
-                    <Link href="#methodology" className={styles.mobileLink} onClick={closeMenu}>Metodología</Link>
-                    <Link href="#services" className={styles.mobileLink} onClick={closeMenu}>Servicios</Link>
-                    <Link href="#services" className={styles.mobileLink} onClick={closeMenu}>Apps</Link>
-                    <Link href="#projects" className={styles.mobileLink} onClick={closeMenu}>Proyectos</Link>
-                    <Link href="#contact" className={`${styles.mobileLink} ${styles.mobileCta}`} onClick={closeMenu}>Contacto</Link>
+                    <Link href="/manifiesto" className={styles.mobileLink} onClick={closeMenu}>Manifiesto</Link>
+                    <Link href="/#methodology" className={styles.mobileLink} onClick={closeMenu}>Metodología</Link>
+                    <Link href="/#services" className={styles.mobileLink} onClick={closeMenu}>Servicios</Link>
+                    <Link href="/#services" className={styles.mobileLink} onClick={closeMenu}>Apps</Link>
+                    <Link href="/#projects" className={styles.mobileLink} onClick={closeMenu}>Proyectos</Link>
+                    <Link href="/#contact" className={`${styles.mobileLink} ${styles.mobileCta}`} onClick={closeMenu}>Contacto</Link>
                 </div>
             </div>
         </nav>
