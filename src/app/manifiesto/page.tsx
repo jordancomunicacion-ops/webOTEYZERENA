@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import ContactModalButton from "@/components/ContactModalButton";
 import styles from "../manifiesto.module.css";
 
 export const metadata: Metadata = {
@@ -141,9 +142,9 @@ export default function ManifiestoPage() {
             </p>
 
             <div className={styles.ctaWrap}>
-              <Link href="/#contact" className={styles.cta}>
+              <ContactModalButton className={styles.cta}>
                 Hablemos
-              </Link>
+              </ContactModalButton>
             </div>
           </article>
         </div>

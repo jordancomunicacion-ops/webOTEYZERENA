@@ -119,17 +119,21 @@
 .cta {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background-color: var(--primary);
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    background: var(--accent);
+    color: var(--foreground);
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 0.9rem;
-    transition: opacity 0.3s ease;
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .cta:hover {
-    opacity: 0.9;
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
