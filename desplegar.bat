@@ -1,6 +1,9 @@
 @echo off
 set SERVER=root@164.92.167.42
-set REMOTE_PATH=/root/SOTOdelPRIOR/apps/oteyzerena
+REM Las webs viven en /root/SOTOdelPRIOR/webs/; en apps/ solo estan las que
+REM llevan backend. Este script apuntaba a apps/oteyzerena, que ya no existe
+REM desde la reorganizacion del 25/07/2026: el deploy fallaba en el scp.
+set REMOTE_PATH=/root/SOTOdelPRIOR/webs/oteyzerena
 
 echo -----------------------------------------
 echo   OTEYZERENA - Despliegue Automatico
